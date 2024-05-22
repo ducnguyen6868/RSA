@@ -1,0 +1,117 @@
+<div class="content">
+    <h1>Chữ ký số RSA</h1>
+    <div class="lock-container">
+        <button id="create-signature">Sinh khóa</button>
+    </div>
+    <div class="main">
+        <div class="signature-generated">
+            <h1>Phát sinh chữ ký</h1>
+            <div class="signature-document">
+                <label>Văn bản ký</label>
+                <textarea id="file-content"></textarea>
+                <input type="file" accept=".docx , .txt" id="insert-file">
+                <button id="file-button">File</button>
+            </div>
+            <div style="text-align: center;"><button id="sign">Ký</button></div>
+            <div class="signature">
+                <label>Chữ ký</label>
+                <textarea id="signed-document" readonly></textarea>
+                <div style="text-align:center">
+                    <button id="tranfered-signature">Chuyển</button><br><br>
+                    <button id="saved-signature">Lưu</button>
+                </div>
+            </div>
+        </div>
+        <div class="signature-checked">
+            <h1>Kiểm tra chữ ký</h1>
+            <div class="signature-document">
+                <label>Văn bản ký</label>
+                <textarea id="file-content-other"></textarea>
+                <input id="file-input-other" type="file" accept=".docx,.txt">
+                <button id="insert-button-other">File văn bản</button>
+            </div>
+            <div class="signature">
+                <label>Chữ ký</label>
+                <textarea id="signature-check" readonly></textarea>
+                <button>File chữ ký</button>
+            </div>
+            <div style="text-align: center;"><button id="check-signature">Kiểm tra chữ ký</button></div>
+            <div class="notifications" style="margin:10px 0px">
+                <label>Thông báo:</label>
+                <input style="padding:10px ; outline:none;" type="text" readonly id="verification-result">
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 10px;
+    }
+
+    button {
+        cursor: pointer;
+        color: white;
+        border: none;
+        background-color: rgb(13, 216, 13);
+        padding: 7px 20px;
+        font-size: large;
+        height: max-content;
+    }
+
+    label {
+        font-size: larger;
+        width: 100px;
+    }
+
+    textarea {
+        outline: none;
+        width: 250px;
+        max-width: 250px;
+        min-width: 250px;
+        padding: 10px;
+        height: 100px;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .content {
+        width: 1200px;
+        height: max-content;
+        background-color: aliceblue;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        background-color: black;
+    }
+
+    .signature-generated,
+    .signature-checked {
+        background-color: aliceblue;
+        padding: 10px;
+    }
+
+    .signature-document,
+    .signature {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0px;
+        width: 550px;
+    }
+</style>
+<script src="js/script.js"></script>
+<!-- Bao gồm thư viện mammoth.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+<script src="js/main.js"></script>
